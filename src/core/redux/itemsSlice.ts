@@ -6,6 +6,7 @@ interface ItemsState {
 
 const itemsString = localStorage.getItem("appItems");
 const items = itemsString ? JSON.parse(itemsString) : [];
+//to service ?
 
 const initialState: ItemsState = {
   value: items,
