@@ -1,12 +1,10 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
+import items from "../services/localStorage/getLocalStorage";
+
 interface ItemsState {
   value: Array<string>;
 }
-
-const itemsString = localStorage.getItem("appItems");
-const items = itemsString ? JSON.parse(itemsString) : [];
-//to service ?
 
 const initialState: ItemsState = {
   value: items,
