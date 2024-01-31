@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { useAppSelector } from "./core/redux/hooks";
 
 import AddItem from "./components/forms/AddItem/AddItem.component";
+import ItemsList from "./components/lists/itemsList/itemsList.component";
 
 function App() {
   const stringItems = useAppSelector((state) => state.items.value);
@@ -14,19 +15,10 @@ function App() {
     [stringItems]
   );
 
-  //make components
   return (
     <div className="App">
       <AddItem />
-      <div>
-        <ul>
-          {stringItems.map((e) => (
-            <article>
-              <li>{e}</li>
-            </article>
-          ))}
-        </ul>
-      </div>
+      <ItemsList stringItems={stringItems} />
     </div>
   );
 }
